@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gishwin Antony Biju — AI &amp; Backend Engineer</title>
+<meta name="description" content="AI engineer with 4+ years building production agent systems: multi-agent orchestration, RAG pipelines, evaluation, and the backend and Kubernetes platforms they run on. Kochi, India.">
+<meta property="og:title" content="Gishwin Antony Biju — AI &amp; Backend Engineer">
+<meta property="og:description" content="Production AI agents, multi-agent orchestration, and the backend platforms underneath.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1C2333;
+  --body:#414A5C;
+  --muted:#79819A;
+  --accent:#4338CA;
+  --accent-hover:#372FA8;
+  --accent-soft:#EEEDFB;
+  --bg:#FFFFFF;
+  --bg-alt:#F7F8FC;
+  --card:#FFFFFF;
+  --border:#E4E7EF;
+  --shadow-sm:0 1px 2px rgba(28,35,51,.05);
+  --shadow-md:0 6px 20px rgba(28,35,51,.07);
+  --radius:10px;
+  --wide:1100px;
+  --narrow:740px;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,sans-serif;
+  --display:"Manrope",-apple-system,BlinkMacSystemFont,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ink:#EEF0F7;
+    --body:#B6BDD0;
+    --muted:#868DA6;
+    --accent:#9D96F5;
+    --accent-hover:#B4AEF8;
+    --accent-soft:#242542;
+    --bg:#111420;
+    --bg-alt:#171B2B;
+    --card:#191D2D;
+    --border:#2A3047;
+    --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+    --shadow-md:0 6px 20px rgba(0,0,0,.35);
+  }
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{
+  font-family:var(--sans);color:var(--body);background:var(--bg);
+  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3,h4{font-family:var(--display);color:var(--ink);font-weight:700;line-height:1.25;letter-spacing:-.02em}
+a{color:var(--accent);text-decoration:none;transition:color .18s}
+a:hover{color:var(--accent-hover)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+ul{list-style:none}
+
+.container{max-width:var(--wide);margin:0 auto;padding:0 24px}
+.narrow{max-width:var(--narrow)}
+section{padding:clamp(56px,8vw,88px) 0;scroll-margin-top:72px}
+.alt{background:var(--bg-alt)}
+.sec-head{margin-bottom:clamp(32px,4vw,48px)}
+.sec-head h2{font-size:clamp(1.55rem,3.6vw,2.05rem);margin-bottom:.4rem}
+.sec-head p{color:var(--muted);font-size:1rem;max-width:60ch}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;height:62px}
+.brand{font-family:var(--display);font-weight:800;color:var(--ink);font-size:1rem;letter-spacing:-.02em;white-space:nowrap}
+.nav-links{display:flex;gap:26px;overflow-x:auto;scrollbar-width:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{
+  font-size:.92rem;font-weight:500;color:var(--body);white-space:nowrap;padding:4px 0;
+  border-bottom:2px solid transparent;
+}
+.nav-links a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+@media (max-width:760px){.brand{display:none}.nav-links{width:100%;justify-content:flex-start}}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(56px,9vw,104px) 0 clamp(48px,7vw,80px)}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:center}
+@media (min-width:880px){.hero-grid{grid-template-columns:1fr 240px;gap:64px}}
+.eyebrow{font-size:.95rem;color:var(--muted);margin-bottom:.6rem}
+.hero h1{font-size:clamp(2.1rem,6vw,3.3rem);font-weight:800;letter-spacing:-.035em;margin-bottom:.55rem}
+.hero .subtitle{font-family:var(--display);font-size:clamp(1.05rem,2.6vw,1.3rem);font-weight:600;color:var(--accent);margin-bottom:.9rem}
+.hero .tagline{font-size:1.06rem;max-width:56ch;margin-bottom:1.1rem}
+.hero .locale{font-size:.95rem;color:var(--muted);margin-bottom:1.9rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:1.6rem}
+.btn{
+  display:inline-block;font-family:var(--display);font-weight:600;font-size:.94rem;
+  padding:11px 20px;border-radius:7px;border:1px solid var(--accent);
+  background:var(--accent);color:#fff;transition:background .18s,color .18s;
+}
+.btn:hover{background:var(--accent-hover);border-color:var(--accent-hover);color:#fff}
+.btn.ghost{background:transparent;color:var(--accent)}
+.btn.ghost:hover{background:var(--accent-soft);color:var(--accent-hover)}
+@media (prefers-color-scheme: dark){.btn{color:#12142A}.btn:hover{color:#12142A}}
+.social{display:flex;gap:18px;font-size:.93rem;font-weight:500}
+.social a{color:var(--muted)}
+.social a:hover{color:var(--accent)}
+
+.portrait{justify-self:start}
+@media (min-width:880px){.portrait{justify-self:end}}
+.portrait img,.monogram{
+  width:180px;height:180px;border-radius:50%;object-fit:cover;
+  border:1px solid var(--border);box-shadow:var(--shadow-md);
+}
+.monogram{
+  display:grid;place-items:center;background:var(--accent-soft);
+  font-family:var(--display);font-weight:800;font-size:2.6rem;color:var(--accent);
+  letter-spacing:-.04em;
+}
+
+/* ---------- about ---------- */
+.about p{margin-bottom:1.15rem;max-width:68ch}
+.about p:last-child{margin-bottom:0}
+.callout{
+  margin-top:1.8rem;padding:20px 22px;background:var(--accent-soft);
+  border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;
+  font-size:1rem;max-width:68ch;
+}
+.callout p{margin:0}
+
+/* ---------- skills ---------- */
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(288px,1fr))}
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:24px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;
+}
+.card h3{font-size:1.06rem;margin-bottom:.35rem}
+.card .lede{font-size:.95rem;color:var(--muted);margin-bottom:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:1.1rem}
+.tag{
+  font-size:.79rem;font-weight:500;padding:4px 10px;border-radius:5px;
+  background:var(--bg-alt);border:1px solid var(--border);color:var(--body);
+}
+.impact{
+  margin-top:auto;padding-top:14px;border-top:1px solid var(--border);
+  font-size:.9rem;color:var(--ink);font-weight:500;line-height:1.5;
+}
+
+/* ---------- experience ---------- */
+.timeline{border-left:2px solid var(--border);padding-left:clamp(20px,3vw,32px);max-width:820px}
+.job{position:relative;padding-bottom:44px}
+.job:last-child{padding-bottom:0}
+.job::before{
+  content:"";position:absolute;left:calc(-1 * clamp(20px,3vw,32px) - 7px);top:8px;
+  width:12px;height:12px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 0 4px var(--bg);
+}
+.job h3{font-size:1.14rem;margin-bottom:.2rem}
+.job .meta{font-size:.93rem;color:var(--muted);margin-bottom:1rem}
+.job .meta .co{color:var(--accent);font-weight:600}
+.job ul li{position:relative;padding-left:20px;margin-bottom:.7rem;font-size:.98rem}
+.job ul li:last-child{margin-bottom:0}
+.job ul li::before{
+  content:"";position:absolute;left:2px;top:.72em;width:6px;height:6px;
+  border-radius:50%;background:var(--border);
+}
+
+/* ---------- projects ---------- */
+.proj h3{font-size:1.1rem;margin-bottom:.15rem}
+.proj .where{font-size:.86rem;color:var(--muted);margin-bottom:.85rem}
+.proj p{font-size:.97rem;margin-bottom:1.1rem}
+.proj .links{margin-top:auto;font-size:.9rem;font-weight:600}
+
+/* ---------- writing ---------- */
+.write-item{
+  display:grid;gap:4px;padding:20px 0;border-bottom:1px solid var(--border);
+}
+.write-item:last-child{border-bottom:none}
+.write-item h3{font-size:1.04rem}
+.write-item p{font-size:.96rem;color:var(--muted);max-width:66ch}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));max-width:920px}
+.contact-grid h3{font-size:.92rem;color:var(--muted);font-weight:600;margin-bottom:.3rem}
+.contact-grid p{font-size:1rem;font-weight:500;color:var(--ink);word-break:break-word}
+
+footer{border-top:1px solid var(--border);padding:28px 0;font-size:.89rem;color:var(--muted)}
+.foot-inner{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <span class="brand">Gishwin Antony Biju</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Hello, I'm</p>
+      <h1>Gishwin Antony Biju</h1>
+      <p class="subtitle">Software Engineer — AI &amp; Backend</p>
+      <p class="tagline">
+        I build AI agent systems that run in production: multi-agent orchestration, RAG pipelines,
+        evaluation, and the FastAPI and Kubernetes platforms underneath them.
+      </p>
+      <p class="locale">4+ years · Kochi, India · Currently at Testing Mavens</p>
+
+      <div class="cta">
+        <a class="btn" href="#projects">View projects</a>
+        <a class="btn ghost" href="files/Gishwin_Antony_Biju_Resume.pdf">Resume</a>
+        <a class="btn ghost" href="mailto:gishwinantony@gmail.com">Get in touch</a>
+      </div>
+
+      <div class="social">
+        <a href="https://github.com/gishwinantony">GitHub</a>
+        <a href="https://linkedin.com/in/gishwinantony">LinkedIn</a>
+        <a href="mailto:gishwinantony@gmail.com">Email</a>
+      </div>
+    </div>
+
+    <div class="portrait">
+      <img src="images/gishwin.jpg" alt="Gishwin Antony Biju"
+           onerror="this.outerHTML='&lt;div class=&quot;monogram&quot; aria-hidden=&quot;true&quot;&gt;GA&lt;/div&gt;'">
+    </div>
+  </div>
+</header>
+
+<section id="about" class="alt">
+  <div class="container">
+    <div class="sec-head"><h2>About</h2></div>
+    <div class="about">
+      <p>
+        I'm an AI engineer with four years of experience building agent systems and the backend
+        services they depend on. Most of my work sits at the point where a model stops being a demo
+        and has to survive real traffic: orchestration, isolation, evaluation, and the failure modes
+        that only show up at concurrency.
+      </p>
+      <p>
+        At Testing Mavens I architected a VS Code–integrated agentic platform for project-aware
+        development and testing. It centres on a Learning Agent that continuously analyses project
+        artifacts to evolve an application knowledge base, which downstream testing agents read from
+        to generate and execute end-to-end browser tests on their own. I built the orchestration
+        layer on Kubernetes — isolated sandboxes, resource controls, runtime monitoring — supporting
+        hundreds of concurrent agents in production, and an LLM-as-a-judge pipeline to measure
+        whether their output is actually correct.
+      </p>
+      <p>
+        Before that, at Innovature Labs, I built RAG pipelines over 10,000+ enterprise documents
+        across Milvus, Chroma, and Azure AI Search, multi-step LangGraph workflows with
+        human-in-the-loop validation of plans and tool calls, and the high-throughput REST and
+        WebSocket APIs that served them. I also modelled a Neo4j knowledge graph behind a
+        recommendation engine and cut release cycles in half with GitHub Actions and automated
+        testing.
+      </p>
+      <p>
+        I care most about the unglamorous half of AI engineering — tracing, evaluation, sandboxing,
+        cost, and knowing why a run failed. I also write and record explanations of infrastructure
+        concepts, mostly because teaching something is the fastest way to find the gaps in your own
+        understanding.
+      </p>
+      <div class="callout">
+        <p>
+          Open to conversations about agent infrastructure, evaluation systems, and backend platform
+          work. <a href="mailto:gishwinantony@gmail.com">Send me an email</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="sec-head">
+      <h2>Core skills</h2>
+      <p>What I work with day to day, and what it has produced.</p>
+    </div>
+    <div class="grid">
+
+      <article class="card">
+        <h3>AI agents &amp; orchestration</h3>
+        <p class="lede">Multi-agent systems that plan, act, and are held to a standard.</p>
+        <div class="tags">
+          <span class="tag">AutoGen</span><span class="tag">LangGraph</span>
+          <span class="tag">LangChain</span><span class="tag">MCP servers</span>
+          <span class="tag">Human-in-the-loop</span>
+        </div>
+        <p class="impact">Orchestration layer supporting hundreds of concurrent agents in production.</p>
+      </article>
+
+      <article class="card">
+        <h3>Retrieval &amp; knowledge</h3>
+        <p class="lede">Getting the right context in front of the model.</p>
+        <div class="tags">
+          <span class="tag">RAG pipelines</span><span class="tag">Milvus</span>
+          <span class="tag">Chroma</span><span class="tag">Azure AI Search</span>
+          <span class="tag">Neo4j</span><span class="tag">ETL ingestion</span>
+        </div>
+        <p class="impact">Retrieval and contextual reasoning across 10,000+ enterprise documents.</p>
+      </article>
+
+      <article class="card">
+        <h3>Evaluation &amp; observability</h3>
+        <p class="lede">Knowing whether an agent actually did the job.</p>
+        <div class="tags">
+          <span class="tag">LLM-as-a-judge</span><span class="tag">Langfuse</span>
+          <span class="tag">PromptFoo</span><span class="tag">Regression detection</span>
+        </div>
+        <p class="impact">Systematic quality measurement across diverse agent test scenarios.</p>
+      </article>
+
+      <article class="card">
+        <h3>Backend engineering</h3>
+        <p class="lede">High-throughput services behind the models.</p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">FastAPI</span>
+          <span class="tag">gRPC</span><span class="tag">Django</span>
+          <span class="tag">WebSockets</span><span class="tag">Redis</span>
+        </div>
+        <p class="impact">40% faster API responses and 80% faster cache-backed reads.</p>
+      </article>
+
+      <article class="card">
+        <h3>Platform &amp; Kubernetes</h3>
+        <p class="lede">Where the agents actually run, safely.</p>
+        <div class="tags">
+          <span class="tag">Kubernetes</span><span class="tag">Docker</span>
+          <span class="tag">Isolated sandboxes</span><span class="tag">Resource controls</span>
+          <span class="tag">AWS</span>
+        </div>
+        <p class="impact">Sandboxed agent execution with runtime monitoring at production scale.</p>
+      </article>
+
+      <article class="card">
+        <h3>Delivery &amp; security</h3>
+        <p class="lede">Shipping often, without widening the attack surface.</p>
+        <div class="tags">
+          <span class="tag">GitHub Actions</span><span class="tag">PyUnit</span>
+          <span class="tag">JWT / OAuth2</span><span class="tag">API gateway patterns</span>
+          <span class="tag">Microservices</span>
+        </div>
+        <p class="impact">Release cycles cut by 50% with automated testing and CI/CD.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="alt">
+  <div class="container">
+    <div class="sec-head"><h2>Experience</h2></div>
+    <div class="timeline">
+
+      <article class="job">
+        <h3>Software Engineer — AI &amp; Backend</h3>
+        <p class="meta"><span class="co">Testing Mavens</span> · Kochi, India · Remote · Jan 2026 – Present</p>
+        <ul>
+          <li>Architected a VS Code–integrated agentic AI platform for project-aware development and
+              testing, including a Learning Agent that continuously analyses project artifacts to
+              evolve the knowledge bases downstream agents use.</li>
+          <li>Built an AI test automation agent on AutoGen and MCP that autonomously generates and
+              executes browser-based end-to-end tests from knowledge-base context, reducing manual
+              QA effort.</li>
+          <li>Designed and deployed the multi-agent orchestration infrastructure on Kubernetes —
+              isolated sandboxes for secure agent execution, resource controls, and runtime
+              monitoring — supporting hundreds of concurrent agents in production.</li>
+          <li>Engineered backend microservices in FastAPI and gRPC for high-throughput distributed
+              pipelines between agents, evaluation systems, and MCP integrations.</li>
+          <li>Implemented an LLM-as-a-judge evaluation pipeline for systematic measurement of output
+              quality, correctness, and regression detection across test scenarios.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <h3>Software Engineer — AI &amp; Backend</h3>
+        <p class="meta"><span class="co">Innovature Labs</span> · Kochi, India · Aug 2022 – Dec 2025</p>
+        <ul>
+          <li>Architected and led development of web service modules in Django and FastAPI,
+              integrating LangChain for AI-driven features — a 25% increase in user engagement and a
+              15% rise in feature adoption.</li>
+          <li>Designed and deployed RAG pipelines using multiple LLMs and vector databases (Milvus,
+              Chroma, Azure AI Search) for retrieval and contextual reasoning across 10,000+
+              enterprise documents.</li>
+          <li>Built multi-step agentic workflows in LangGraph for document retrieval, image analysis,
+              and response generation, with human-in-the-loop validation of plans and tool calls
+              before execution.</li>
+          <li>Integrated MCP servers into agentic pipelines for standardised LLM-to-data-source
+              communication, and implemented Langfuse observability and tracing across multi-agent
+              workflows.</li>
+          <li>Engineered REST and WebSocket APIs for real-time streaming and third-party
+              integrations, cutting API response times by 40% and cache-backed reads by 80% through
+              distributed caching.</li>
+          <li>Designed a Neo4j graph data model with entity-relationship modelling to power a
+              recommendation engine, and built ETL pipelines ingesting 200+ documents a day into
+              vector stores.</li>
+          <li>Streamlined CI/CD with GitHub Actions and automated PyUnit testing, halving release
+              cycles; containerised microservices with Docker and Kubernetes, secured with JWT and
+              OAuth2 on AWS.</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="sec-head">
+      <h2>Selected work</h2>
+      <p>Systems I designed or built end to end.</p>
+    </div>
+    <div class="grid">
+
+      <article class="card proj">
+        <h3>Platform AI</h3>
+        <p class="where">Testing Mavens</p>
+        <p>A VS Code–integrated agentic platform for project-aware development and testing. A
+          Learning Agent reads source continuously and evolves an application knowledge base;
+          testing agents consume that context to generate and run tests without being told what the
+          application does.</p>
+      </article>
+
+      <article class="card proj">
+        <h3>Lucius AI</h3>
+        <p class="where">Testing Mavens</p>
+        <p>AI test automation platform pairing Playwright MCP with agentic pipelines for intelligent
+          test case generation and end-to-end browser automation.</p>
+      </article>
+
+      <article class="card proj">
+        <h3>mcp-gateway</h3>
+        <p class="where">Open source</p>
+        <p>A security and context-control gateway in front of MCP servers: scans for tool poisoning,
+          enforces per-principal authorisation, retrieves tools dynamically instead of flooding the
+          model's context, and writes an audit log of every call.</p>
+        <p class="links"><a href="https://github.com/gishwinantony">View on GitHub</a></p>
+      </article>
+
+      <article class="card proj">
+        <h3>Box → Azure AI Search indexer</h3>
+        <p class="where">Innovature Labs</p>
+        <p>An enterprise document pipeline that fetches files from Box Cloud, extracts structured
+          content via Azure Document Intelligence, and indexes it into Azure AI Search for semantic
+          retrieval.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="writing" class="alt">
+  <div class="container">
+    <div class="sec-head">
+      <h2>Writing &amp; video</h2>
+      <p>Explaining how infrastructure actually works, mechanism first.</p>
+    </div>
+    <div class="narrow">
+
+      <article class="write-item">
+        <h3><a href="https://linkedin.com/in/gishwinantony">Kubernetes networking, from the pod up</a></h3>
+        <p>A multi-part series on LinkedIn. Part 1 covers how a pod gets connected to the network;
+          Part 2 covers Services, kube-proxy, and how traffic actually reaches a pod. Diagrams drawn
+          by hand rather than lifted from docs.</p>
+      </article>
+
+      <article class="write-item">
+        <h3><a href="https://www.youtube.com/">Tech Stickyman</a></h3>
+        <p>A YouTube channel explaining technology concepts for a technical audience — real
+          mechanisms and practical depth rather than surface definitions.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="sec-head"><h2>Contact</h2></div>
+    <div class="contact-grid">
+      <div>
+        <h3>Email</h3>
+        <p><a href="mailto:gishwinantony@gmail.com">gishwinantony@gmail.com</a></p>
+      </div>
+      <div>
+        <h3>LinkedIn</h3>
+        <p><a href="https://linkedin.com/in/gishwinantony">/in/gishwinantony</a></p>
+      </div>
+      <div>
+        <h3>GitHub</h3>
+        <p><a href="https://github.com/gishwinantony">@gishwinantony</a></p>
+      </div>
+      <div>
+        <h3>Location</h3>
+        <p>Kochi, Kerala, India</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container foot-inner">
+    <span>© 2026 Gishwin Antony Biju</span>
+    <span>Integrated BCA + MCA, SCMS Cochin · MG University</span>
+  </div>
+</footer>
+
+</body>
+</html>
