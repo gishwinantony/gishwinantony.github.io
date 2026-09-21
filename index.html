@@ -176,14 +176,6 @@ section{padding:clamp(56px,8vw,88px) 0;scroll-margin-top:72px}
 .proj p{font-size:.97rem;margin-bottom:1.1rem}
 .proj .links{margin-top:auto;font-size:.9rem;font-weight:600}
 
-/* ---------- writing ---------- */
-.write-item{
-  display:grid;gap:4px;padding:20px 0;border-bottom:1px solid var(--border);
-}
-.write-item:last-child{border-bottom:none}
-.write-item h3{font-size:1.04rem}
-.write-item p{font-size:.96rem;color:var(--muted);max-width:66ch}
-
 /* ---------- contact ---------- */
 .contact-grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));max-width:920px}
 .contact-grid h3{font-size:.92rem;color:var(--muted);font-weight:600;margin-bottom:.3rem}
@@ -203,7 +195,6 @@ footer{border-top:1px solid var(--border);padding:28px 0;font-size:.89rem;color:
       <a href="#skills">Skills</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
-      <a href="#writing">Writing</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -457,31 +448,6 @@ footer{border-top:1px solid var(--border);padding:28px 0;font-size:.89rem;color:
         <p>An enterprise document pipeline that fetches files from Box Cloud, extracts structured
           content via Azure Document Intelligence, and indexes it into Azure AI Search for semantic
           retrieval.</p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<section id="writing" class="alt">
-  <div class="container">
-    <div class="sec-head">
-      <h2>Writing &amp; video</h2>
-      <p>Explaining how infrastructure actually works, mechanism first.</p>
-    </div>
-    <div class="narrow">
-
-      <article class="write-item">
-        <h3><a href="https://linkedin.com/in/gishwinantony">Kubernetes networking, from the pod up</a></h3>
-        <p>A multi-part series on LinkedIn. Part 1 covers how a pod gets connected to the network;
-          Part 2 covers Services, kube-proxy, and how traffic actually reaches a pod. Diagrams drawn
-          by hand rather than lifted from docs.</p>
-      </article>
-
-      <article class="write-item">
-        <h3><a href="https://www.youtube.com/">Tech Stickyman</a></h3>
-        <p>A YouTube channel explaining technology concepts for a technical audience — real
-          mechanisms and practical depth rather than surface definitions.</p>
       </article>
 
     </div>
